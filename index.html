@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: rgba(255,255,255,0.05);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --glass: blur(12px);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(120deg, #020617, #0f172a);
+      color: var(--text);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      backdrop-filter: var(--glass);
+      background: rgba(2,6,23,0.6);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* HERO */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .typing {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: 10px;
+      min-height: 24px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: var(--accent);
+      color: #020617;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* SECTION */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    /* GLASS CARD */
+    .card {
+      background: var(--card);
+      backdrop-filter: var(--glass);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* SKILLS */
+    .skills span {
+      display: inline-block;
+      background: #1e293b;
+      padding: 8px 14px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    /* PROJECT GRID */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+    }
+
+    /* SCROLL ANIMATION */
+    .hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+    @media(max-width:600px){
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <img src="your-photo.jpg" alt="Profile">
+  <h1>Your Name</h1>
+  <div class="typing" id="typing"></div>
+  <a href="#contact" class="btn">Hire Me</a>
+</header>
+
+<section id="about" class="hidden">
+  <h2>About</h2>
+  <div class="card">
+    <p>
+      Write a powerful intro about yourself. Focus on what you do, your goals,
+      and what makes you unique.
+    </p>
+  </div>
+</section>
+
+<section id="skills" class="hidden">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Video Editing</span>
+    <span>Content Creation</span>
+  </div>
+</section>
+
+<section id="experience" class="hidden">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Job Role</h3>
+    <p><strong>Company</strong> | Year - Year</p>
+    <p>Explain your impact and achievements.</p>
+  </div>
+
+</section>
+
+<section id="projects" class="hidden">
+  <h2>Projects</h2>
+
+  <div class="projects">
+    <div class="card">
+      <h3>Project One</h3>
+      <p>Short project description.</p>
+      <a href="#" class="btn">View</a>
+    </div>
+
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Short project description.</p>
+      <a href="#" class="btn">View</a>
+    </div>
+  </div>
+
+</section>
+
+<section id="contact" class="hidden">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: your@email.com</p>
+    <p>Phone: +91 XXXXX XXXXX</p>
+    <p>
+      <a href="#">LinkedIn</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">GitHub</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Your Name</p>
+</footer>
+
+<script>
+  // Typing Effect
+  const text = ["Creative Developer", "Video Editor", "Content Creator"];
+  let i = 0, j = 0, current = "", isDeleting = false;
+
+  function type() {
+    current = text[i];
+    document.getElementById("typing").textContent =
+      current.substring(0, j);
+
+    if (!isDeleting && j < current.length) {
+      j++;
+      setTimeout(type, 100);
+    } else if (isDeleting && j > 0) {
+      j--;
+      setTimeout(type, 50);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) i = (i + 1) % text.length;
+      setTimeout(type, 800);
+    }
+  }
+  type();
+
+  // Scroll Reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  });
+
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+  </html> 
